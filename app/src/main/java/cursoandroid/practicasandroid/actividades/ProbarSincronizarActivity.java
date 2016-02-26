@@ -18,8 +18,7 @@ public class ProbarSincronizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_probar_sincronizar);
 
-        final Button btn_sincronizar =
-                (Button) findViewById(R.id.btn_sincro_service);
+        final Button btn_sincronizar = (Button) findViewById(R.id.btn_sincro_service);
         btn_sincronizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,8 +26,7 @@ public class ProbarSincronizarActivity extends AppCompatActivity {
             }
         });
 
-        final Button btn_quitar =
-                (Button) findViewById(R.id.btn_sincro_quitarnotificaciones_service);
+        final Button btn_quitar = (Button) findViewById(R.id.btn_sincro_quitarnotificaciones_service);
         btn_quitar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,10 +37,7 @@ public class ProbarSincronizarActivity extends AppCompatActivity {
     }
 
     public void btn_quitar_onClick(View v) {
-        NotificationManager servicioNotificaciones =
-                (NotificationManager)
-                        getSystemService(Context.NOTIFICATION_SERVICE);
-
+        NotificationManager servicioNotificaciones = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         servicioNotificaciones.cancelAll();
     }
 

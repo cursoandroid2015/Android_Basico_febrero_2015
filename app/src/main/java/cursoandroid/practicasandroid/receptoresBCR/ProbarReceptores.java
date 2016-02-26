@@ -32,8 +32,6 @@ public class ProbarReceptores extends BroadcastReceiver {
             // Escucho por el mensaje de broadcast cursoandroid.SINCRONIZACION_TERMINADA
             String state = intent.getStringExtra("state");
             Toast.makeText(context, "PROPIETARIO:cursoandroid.SINCRONIZACION_TERMINADA: " + state, Toast.LENGTH_LONG).show();
-
-
         }
     }
 }

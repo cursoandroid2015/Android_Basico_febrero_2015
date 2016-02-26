@@ -40,10 +40,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- ACTIVITY -->
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -51,7 +53,6 @@
         <activity android:name=".PasoParametrosActivity">
             <intent-filter>
                 <action android:name="cursoandroid.practicasandroid.PASODEPARAMETROS" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -65,18 +66,24 @@
         <activity android:name=".actividades.ProbarSincronizarActivity" />
         <activity android:name=".actividades.ProbarReceptoresActivity"></activity>
 
+        <!-- SERVICE -->
         <service android:name=".servicios.MonitorDeviceService" />
         <service
             android:name=".servicios.IntentSincronizacionService"
             android:exported="false" />
 
+        <!-- REGISTRO AUTOMÁTICO DEL BROADCAST
+        En probarreceptoresactivity.java están los bradcast receiver registrado de forma manual.
+        No son necesarios los 2 tipos, el primero se registra al entrar en la app y el segundo se
+        registra al pulsar el botón activar -->
+
+        <!-- BROADCAST RECEIVER -->
         <receiver android:name=".receptoresBCR.ProbarReceptores">
             <intent-filter>
                 <action android:name="android.intent.action.AIRPLANE_MODE"></action>
                 <action android:name="cursoandroid.SINCRONIZACION_TERMINADA"></action>
             </intent-filter>
         </receiver>
-
 
     </application>
 

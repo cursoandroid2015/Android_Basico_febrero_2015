@@ -39,9 +39,7 @@ public class ProbarReceptoresActivity extends AppCompatActivity implements View.
         switch (v.getId()) {
             case R.id.btn_probar_receptores_activar:
                 // Registro el broadcast MODO AVION
-                IntentFilter filtro = new IntentFilter(
-                        Intent.ACTION_AIRPLANE_MODE_CHANGED
-                );
+                IntentFilter filtro = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
                 filtro.addAction("cursoandroid.SINCRONIZACION_TERMINADA");
 
                 receptor = new ProbarReceptores();

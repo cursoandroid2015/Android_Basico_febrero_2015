@@ -129,15 +129,12 @@ public class EmpleoHilosActivity extends AppCompatActivity {
 
     private void btn_parar_operacion(View v) {
         CodigoAsincronoOK = false;
-
         btn_arrancar.setEnabled(true);
-
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-
         CodigoAsincronoOK = false;
     }
 

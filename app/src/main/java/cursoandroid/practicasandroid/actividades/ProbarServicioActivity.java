@@ -95,8 +95,6 @@ public class ProbarServicioActivity extends AppCompatActivity implements Runnabl
                         txt_datagrama.setText(dataStr);
                     }
                 });
-
-
             }
         } catch (Exception e) {
             e.printStackTrace();

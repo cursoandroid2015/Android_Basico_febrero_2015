@@ -34,15 +34,12 @@ public class PasoParametrosActivity extends Activity {
             }
         });
 
-
         Intent mensaje = getIntent();
         String nombre = mensaje.getStringExtra("nombre");
         String clave = mensaje.getStringExtra("clave");
 
         editNombre.setText(nombre);
         editClave.setText(clave);
-
-
     }
 
     private void btn_aceptar_onClick(View v) {
