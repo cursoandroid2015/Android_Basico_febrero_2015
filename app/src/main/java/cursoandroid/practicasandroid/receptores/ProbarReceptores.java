@@ -1,4 +1,4 @@
-package cursoandroid.practicasandroid.receptoresBCR;
+package cursoandroid.practicasandroid.receptores;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

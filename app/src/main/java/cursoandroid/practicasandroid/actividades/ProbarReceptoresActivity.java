@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import cursoandroid.practicasandroid.R;
-import cursoandroid.practicasandroid.receptoresBCR.ProbarReceptores;
+import cursoandroid.practicasandroid.receptores.ProbarReceptores;
 
 // Implementamos el médoto onclick del view
 public class ProbarReceptoresActivity extends AppCompatActivity implements View.OnClickListener {
