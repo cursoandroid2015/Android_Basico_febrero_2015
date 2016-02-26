@@ -61,17 +61,23 @@
         <activity android:name=".DialogActivity" />
         <activity android:name=".PreferenciasActivity" />
         <activity android:name=".ProbarRecursosParametrizadosActivity" />
+        <activity android:name=".actividades.ProbarServicioActivity" />
+        <activity android:name=".actividades.ProbarSincronizarActivity" />
+        <activity android:name=".actividades.ProbarReceptoresActivity"></activity>
 
         <service android:name=".servicios.MonitorDeviceService" />
-
-        <activity android:name=".actividades.ProbarServicioActivity" />
-
         <service
             android:name=".servicios.IntentSincronizacionService"
             android:exported="false" />
 
-        <activity android:name=".actividades.ProbarSincronizarActivity" />
-        <activity android:name=".actividades.ProbarReceptoresActivity"></activity>
+        <receiver android:name=".receptoresBCR.ProbarReceptores">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE"></action>
+                <action android:name="cursoandroid.SINCRONIZACION_TERMINADA"></action>
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>

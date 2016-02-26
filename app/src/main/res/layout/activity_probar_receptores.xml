@@ -17,21 +17,21 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_activar"
+            android:id="@+id/btn_probar_receptores_activar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:text="Activar" />
 
         <Button
-            android:id="@+id/btn_desactivar"
+            android:id="@+id/btn_probar_receptores_desactivar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:text="Desactivar" />
 
         <Button
-            android:id="@+id/btn_emitir"
+            android:id="@+id/btn_probar_receptores_emitir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"

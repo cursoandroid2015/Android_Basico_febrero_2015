@@ -15,6 +15,7 @@ import android.widget.Toast;
 import java.util.HashSet;
 import java.util.Set;
 
+import cursoandroid.practicasandroid.actividades.ProbarReceptoresActivity;
 import cursoandroid.practicasandroid.actividades.ProbarServicioActivity;
 import cursoandroid.practicasandroid.actividades.ProbarSincronizarActivity;
 
@@ -155,6 +156,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_menu_LanzaIntentSincroServicio:
                 // Llamada través de la clase
                 MessageLaunchActivity = new Intent(this, ProbarSincronizarActivity.class);
+                startActivity(MessageLaunchActivity);
+                break;
+            case R.id.main_menu_LanzaIntentProbarReceptores:
+                // Llamada través de la clase
+                MessageLaunchActivity = new Intent(this, ProbarReceptoresActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
 

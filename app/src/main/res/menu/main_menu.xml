@@ -56,5 +56,14 @@
                 android:title="Sincronizacion"></item>
         </menu>
     </item>
+    <item
+        android:id="@+id/menu_main_actividades_dia5"
+        android:title="Dia 5">
+        <menu>
+            <item
+                android:id="@+id/main_menu_LanzaIntentProbarReceptores"
+                android:title="Probar Receptores"></item>
+        </menu>
+    </item>
 
 </menu>
