@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Cuenta de Usuario">
+        <EditTextPreference
+            android:defaultValue="usuario1"
+            android:key="nombre"
+            android:summary="Identificador de usuario"
+            android:title="Nombre"></EditTextPreference>
+        <EditTextPreference
+            android:defaultValue="password1"
+            android:key="password"
+            android:password="true"
+            android:summary="Password del usuario"
+            android:title="Clave"></EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Avanzado">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="depuracion"
+            android:summaryOff="Depuración desactivado"
+            android:summaryOn="Depuración activado"
+            android:title="Modo depuración"></CheckBoxPreference>
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="auditoria"
+            android:summaryOff="Auditoria desactivado"
+            android:summaryOn="Auditoria activado"
+            android:title="Modo auditoria"></SwitchPreference>
+        <ListPreference
+            android:dialogTitle="Elige una"
+            android:entries="@array/tipoConexionStr"
+            android:entryValues="@array/tipoConexionId"
+            android:key="tipoConexion"
+            android:title="Tipo de Conexión"></ListPreference>
+        <MultiSelectListPreference
+            android:dialogTitle="Conexiones Activas"
+            android:entries="@array/tipoConexionStr"
+            android:entryValues="@array/tipoConexionId"
+            android:key="ConexionesActivas"
+            android:title="Conexiones Activas"></MultiSelectListPreference>
+
+        <PreferenceScreen android:title="Otra Preferencia">
+            <PreferenceCategory android:title="Otra Categoria">
+                <EditTextPreference
+                    android:defaultValue="edit2"
+                    android:key="edit2"
+                    android:summary="edit2"
+                    android:title="edit2"></EditTextPreference>
+            </PreferenceCategory>
+            <PreferenceCategory android:title="Tonos">
+                <RingtonePreference
+                    android:key="tono"
+                    android:ringtoneType="all"></RingtonePreference>
+            </PreferenceCategory>
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+</PreferenceScreen>

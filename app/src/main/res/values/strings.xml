@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">PracticasAndroid</string>
+    <string-array name="tipoConexionStr">
+        <item>TIPO 1</item>
+        <item>TIPO 2</item>
+        <item>TIPO 3</item>
+        <item>TIPO 4</item>
+        <item>TIPO 5</item>
+    </string-array>
+    <string-array name="tipoConexionId">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>

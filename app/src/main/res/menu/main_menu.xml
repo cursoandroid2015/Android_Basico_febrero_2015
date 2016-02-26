@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Si queremos un grupo -->
+    <item
+        android:id="@+id/menu_main_actividades_dia1"
+        android:title="Dia 1">
+        <menu>
+            <item
+                android:id="@+id/main_menu_LaunchCiclo"
+                android:title="Ciclo de Vida de Actividad"></item>
+            <item
+                android:id="@+id/main_menu_LaunchPaso"
+                android:title="Paso de Parámetros"></item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_main_actividades_dia2"
+        android:title="Dia 2">
+        <menu>
+            <item
+                android:id="@+id/main_menu_LaunchReco"
+                android:title="Lista Simple"></item>
+            <item
+                android:id="@+id/main_menu_LanzaThreadNoHilo"
+                android:title="Uso de Thread"></item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_main_actividades_dia3"
+        android:title="Dia 3">
+        <menu>
+            <item
+                android:id="@+id/main_menu_LanzaHHTP"
+                android:title="Llamada HTTP"></item>
+            <item
+                android:id="@+id/main_menu_LanzaAlert"
+                android:title="Mostrar Alertas"></item>
+            <item
+                android:id="@+id/main_menu_LanzaPreferencias"
+                android:title="Mostrar Preferencias"></item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_main_actividades_dia4"
+        android:title="Dia 4">
+        <menu>
+            <item
+                android:id="@+id/main_menu_LanzaParametrizable"
+                android:title="Recursos Parametrizables"></item>
+            <item
+                android:id="@+id/main_menu_LanzaServicio"
+                android:title="Servicio"></item>
+            <item
+                android:id="@+id/main_menu_LanzaIntentSincroServicio"
+                android:title="Sincronizacion"></item>
+        </menu>
+    </item>
+
+</menu>
