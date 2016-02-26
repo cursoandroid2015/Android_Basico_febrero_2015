@@ -8,7 +8,6 @@ import android.os.IBinder;
 
 public class MensajeriaServicioVinculadoRPC extends Service {
 
-
     private MensajeriaServicioVinculadoRPCBinder mensajeriaRPCBinder;
 
     public MensajeriaServicioVinculadoRPC() {
@@ -27,6 +26,7 @@ public class MensajeriaServicioVinculadoRPC extends Service {
 
     @Override
     public boolean onUnbind(Intent intent) {
+        mensajeriaRPCBinder.quitarCliente();
         return super.onUnbind(intent);
     }
 

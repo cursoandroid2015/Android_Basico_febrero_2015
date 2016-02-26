@@ -67,12 +67,14 @@
         <activity android:name=".actividades.ProbarServicioActivity" />
         <activity android:name=".actividades.ProbarSincronizarActivity" />
         <activity android:name=".actividades.ProbarReceptoresActivity" />
+        <activity android:name=".actividades.ServicioMensajeriaVinculadoActivity"></activity>
 
         <!-- SERVICE -->
         <service android:name=".servicios.MonitorDeviceService" />
         <service
             android:name=".servicios.IntentSincronizacionService"
             android:exported="false" />
+        <service android:name=".servicios.MensajeriaServicioVinculadoRPC" />
 
         <!--
         REGISTRO AUTOMÁTICO DEL BROADCAST
@@ -81,7 +83,6 @@
         registra al pulsar el botón activar
         -->
 
-
         <!-- BROADCAST RECEIVER -->
         <receiver android:name=".receptores.ProbarReceptores">
             <intent-filter>
@@ -89,13 +90,6 @@
                 <action android:name="cursoandroid.SINCRONIZACION_TERMINADA" />
             </intent-filter>
         </receiver>
-
-        <service
-            android:name=".servicios.MensajeriaServicioVinculadoRPC"
-            android:enabled="false"
-            android:exported="false" />
-
-        <activity android:name=".actividades.ServicioMensajeriaVinculadoActivity"></activity>
     </application>
 
 </manifest>

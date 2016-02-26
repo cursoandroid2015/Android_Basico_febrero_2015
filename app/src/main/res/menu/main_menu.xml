@@ -63,6 +63,9 @@
             <item
                 android:id="@+id/main_menu_LanzaIntentProbarReceptores"
                 android:title="Probar Receptores"></item>
+            <item
+                android:id="@+id/main_menu_LanzaIntentProbarMensajeria"
+                android:title="Probar Mensajeria"></item>
         </menu>
     </item>
 

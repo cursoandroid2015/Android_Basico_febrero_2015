@@ -18,6 +18,7 @@ import java.util.Set;
 import cursoandroid.practicasandroid.actividades.ProbarReceptoresActivity;
 import cursoandroid.practicasandroid.actividades.ProbarServicioActivity;
 import cursoandroid.practicasandroid.actividades.ProbarSincronizarActivity;
+import cursoandroid.practicasandroid.actividades.ServicioMensajeriaVinculadoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -163,7 +164,11 @@ public class MainActivity extends AppCompatActivity {
                 MessageLaunchActivity = new Intent(this, ProbarReceptoresActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
-
+            case R.id.main_menu_LanzaIntentProbarMensajeria:
+                // Llamada través de la clase
+                MessageLaunchActivity = new Intent(this, ServicioMensajeriaVinculadoActivity.class);
+                startActivity(MessageLaunchActivity);
+                break;
             default:
                 break;
         }

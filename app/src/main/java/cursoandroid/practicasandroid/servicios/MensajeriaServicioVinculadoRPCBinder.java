@@ -17,7 +17,6 @@ public class MensajeriaServicioVinculadoRPCBinder extends Binder implements Mens
 
     // Creamos el constructor
     public MensajeriaServicioVinculadoRPCBinder(Context ctx) {
-
         this.ctx = ctx;
     }
 
@@ -36,7 +35,6 @@ public class MensajeriaServicioVinculadoRPCBinder extends Binder implements Mens
     // Sólo permito un cliente
     @Override
     public void registrarCliente(MensajeriaRPCCallback callback) {
-
         this.callback = callback;
     }
 
