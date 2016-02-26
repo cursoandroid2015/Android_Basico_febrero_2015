@@ -19,14 +19,23 @@ import cursoandroid.practicasandroid.servicios.MensajeriaServicioVinculadoRPCBin
 // Para probar tanto el servicio de mensajería por RPC o sin el
 public class ServicioMensajeriaVinculadoActivity extends AppCompatActivity implements View.OnClickListener, MensajeriaRPCCallback {
 
+    // rpc
     private Button btn_serv_bind_rpc_link;
     private Button btn_serv_bind_rpc_unlink;
     private Button btn_serv_bind_rpc_send;
     private Button btn_serv_bind_rpc_receive_callback;
 
+    // msg
+    private Button btn_serv_bind_msg_link;
+    private Button btn_serv_bind_msg_unlink;
+    private Button btn_serv_bind_msg_send;
+    private Button btn_serv_bind_msg_receive_callback;
+
+    // rpc
     private MensajeriaServicioVinculadoRPCBinderInterface ServiceMensajeria;
     private boolean ServiceMensajeria_OK = true;
 
+    // rpc
     // Interface de callback para que al intentar conectarnos nos devuelva el tipo ibinder
     private ServiceConnection ServiceConnectionCallBack = new ServiceConnection() {
         @Override
@@ -48,18 +57,33 @@ public class ServicioMensajeriaVinculadoActivity extends AppCompatActivity imple
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_servicio_mensajeria_vinculado);
 
+        // rpc
         btn_serv_bind_rpc_link = (Button) findViewById(R.id.btn_serv_bind_rpc_link);
         btn_serv_bind_rpc_unlink = (Button) findViewById(R.id.btn_serv_bind_rpc_unlink);
         btn_serv_bind_rpc_send = (Button) findViewById(R.id.btn_serv_bind_rpc_send);
         btn_serv_bind_rpc_receive_callback = (Button) findViewById(R.id.btn_serv_bind_rpc_receive_callback);
 
+        // rpc
         btn_serv_bind_rpc_link.setOnClickListener(this);
         btn_serv_bind_rpc_unlink.setOnClickListener(this);
         btn_serv_bind_rpc_send.setOnClickListener(this);
         btn_serv_bind_rpc_receive_callback.setOnClickListener(this);
 
+        // msg
+        btn_serv_bind_msg_link = (Button) findViewById(R.id.btn_serv_bind_msg_link);
+        btn_serv_bind_msg_unlink = (Button) findViewById(R.id.btn_serv_bind_msg_unlink);
+        btn_serv_bind_msg_send = (Button) findViewById(R.id.btn_serv_bind_msg_send);
+        btn_serv_bind_msg_receive_callback = (Button) findViewById(R.id.btn_serv_bind_msg_receive_callback);
+
+        // msg
+        btn_serv_bind_msg_link.setOnClickListener(this);
+        btn_serv_bind_msg_unlink.setOnClickListener(this);
+        btn_serv_bind_msg_send.setOnClickListener(this);
+        btn_serv_bind_msg_receive_callback.setOnClickListener(this);
+
     }
 
+    // rpc
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -93,6 +117,7 @@ public class ServicioMensajeriaVinculadoActivity extends AppCompatActivity imple
         }
     }
 
+    // rpc
     @Override
     public void mensajeNuevo(String mensaje) {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();

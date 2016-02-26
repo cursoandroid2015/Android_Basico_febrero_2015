@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -13,9 +13,9 @@
         android:id="@+id/btn_serv_bind_rpc_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Enlazar con servicio" />
+        android:text="Enlazar con servicio RPC" />
 
     <Button
         android:id="@+id/btn_serv_bind_rpc_unlink"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_serv_bind_rpc_link"
         android:layout_centerHorizontal="true"
-        android:text="Desenlazar del servicio" />
+        android:text="Desenlazar del servicio RPC" />
 
     <Button
         android:id="@+id/btn_serv_bind_rpc_send"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_serv_bind_rpc_unlink"
         android:layout_centerHorizontal="true"
-        android:text="Enviar mensaje al servicio" />
+        android:text="Enviar mensaje al servicio RPC" />
 
     <Button
         android:id="@+id/btn_serv_bind_rpc_receive_callback"
@@ -41,5 +41,40 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_serv_bind_rpc_send"
         android:layout_centerHorizontal="true"
-        android:text="Recibir mensaje del servicio" />
+        android:text="Recibir mensaje del servicio RPC" />
+
+    <Button
+        android:id="@+id/btn_serv_bind_msg_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_serv_bind_rpc_receive_callback"
+        android:layout_centerHorizontal="true"
+        android:text="Activar MSG" />
+
+    <Button
+        android:id="@+id/btn_serv_bind_msg_unlink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_serv_bind_msg_link"
+        android:layout_centerHorizontal="true"
+        android:text="Desactivar MSG" />
+
+    <Button
+        android:id="@+id/btn_serv_bind_msg_send"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_serv_bind_msg_unlink"
+        android:layout_centerHorizontal="true"
+        android:text="Enviar Mensaje MSG" />
+
+    <Button
+        android:id="@+id/btn_serv_bind_msg_receive_callback"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_serv_bind_msg_send"
+        android:layout_centerHorizontal="true"
+        android:text="Recibir Mensaje MSG" />
+
 </RelativeLayout>

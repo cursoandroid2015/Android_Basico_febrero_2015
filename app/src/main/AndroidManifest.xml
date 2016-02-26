@@ -67,21 +67,24 @@
         <activity android:name=".actividades.ProbarServicioActivity" />
         <activity android:name=".actividades.ProbarSincronizarActivity" />
         <activity android:name=".actividades.ProbarReceptoresActivity" />
-        <activity android:name=".actividades.ServicioMensajeriaVinculadoActivity"></activity>
+        <activity android:name=".actividades.ServicioMensajeriaVinculadoActivity" />
 
         <!-- SERVICE -->
         <service android:name=".servicios.MonitorDeviceService" />
         <service
             android:name=".servicios.IntentSincronizacionService"
             android:exported="false" />
+        <!-- MensajeriaServicioVinculadoRPC quitar android:enabled="false" android:exported="false" -->
         <service android:name=".servicios.MensajeriaServicioVinculadoRPC" />
-
+        <!-- MensajeriaServicioMSG quitar android:enabled="false" android:exported="false" -->
+        <service android:name=".servicios.MensajeriaServicioMSG"></service>
         <!--
         REGISTRO AUTOMÁTICO DEL BROADCAST
         En probarreceptoresactivity.java están los bradcast receiver registrado de forma manual.
         No son necesarios los 2 tipos, el primero se registra al entrar en la app y el segundo se
         registra al pulsar el botón activar
         -->
+
 
         <!-- BROADCAST RECEIVER -->
         <receiver android:name=".receptores.ProbarReceptores">
@@ -90,6 +93,8 @@
                 <action android:name="cursoandroid.SINCRONIZACION_TERMINADA" />
             </intent-filter>
         </receiver>
+
+
     </application>
 
 </manifest>
