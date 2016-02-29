@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class TareasDB {
     // tipo de dato para acceder a la DB
-    private SQLiteDatabase db;
+    private SQLiteDatabase SQLiteDB;
 
     // nuestra clase
     private TareasDBHelper dbHelper;
@@ -16,34 +16,37 @@ public class TareasDB {
         // Contexto de la aplicación donde se almacenará la DB
         // ctx
 
-        // Genera un fichero tareas.db
+        // Genera un fichero tareas.SQLiteDB
+        // nombre del fichero "tareas"
         dbHelper = new TareasDBHelper(ctx, "tareas", null, 1);
     }
 
-    public void AbrirDB () {
+    public void AbrirDB() {
         // Si no existe llamará a nuestro dbHelper.onCreate
-        this.db = dbHelper.getWritableDatabase();
+        this.SQLiteDB = dbHelper.getWritableDatabase();
     }
 
     public void CerrarDB() {
-        if (db != null) {
+        if (SQLiteDB != null) {
             dbHelper.close();
         }
     }
 
-    public void altaTarea( String titulo, String descripcion) {
+    public void altaTarea(String titulo, String descripcion) {
         ContentValues nuevaTarea = new ContentValues();
-        nuevaTarea.put("TITULO",titulo);
-        nuevaTarea.put("DESCRIPCION",descripcion);
-        nuevaTarea.put("FECHA",System.currentTimeMillis());
+        nuevaTarea.put("TITULO", titulo);
+        nuevaTarea.put("DESCRIPCION", descripcion);
+        nuevaTarea.put("FECHA", System.currentTimeMillis());
 
-        db.insert("TAREAS", null, nuevaTarea);
+        // nombre de la tabla TAREAS
+        SQLiteDB.insert("TAREAS", null, nuevaTarea);
     }
 
     public Cursor LeerTareas() {
         // Como es una SELECT no se puede utilizar execsql
 
         // si son todas la columnas, ponemos null
-        return db.query("TAREAS", null, null, null, null, null, null, null);
+        // nombre de la tabla TAREAS
+        return SQLiteDB.query("TAREAS", null, null, null, null, null, null, null);
     }
 }
