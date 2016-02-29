@@ -1,4 +1,4 @@
-package cursoandroid.practicasandroid;
+package cursoandroid.practicasandroid.actividades;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.os.Handler;
 
 import java.util.logging.LogRecord;
+
+import cursoandroid.practicasandroid.R;
 
 public class EmpleoHilosActivity extends AppCompatActivity {
 

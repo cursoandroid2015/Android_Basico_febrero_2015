@@ -50,20 +50,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CicloDeVidaActivity" />
-        <activity android:name=".PasoParametrosActivity">
+        <activity android:name=".actividades.CicloDeVidaActivity" />
+        <activity android:name=".actividades.PasoParametrosActivity">
             <intent-filter>
                 <action android:name="cursoandroid.practicasandroid.PASODEPARAMETROS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListSimpleActivity" />
-        <activity android:name=".EmpleoHilosActivity" />
-        <activity android:name=".ASyncTaskBrowserActivity" />
-        <activity android:name=".DialogActivity" />
-        <activity android:name=".PreferenciasActivity" />
-        <activity android:name=".ProbarRecursosParametrizadosActivity" />
+        <activity android:name=".actividades.ListSimpleActivity" />
+        <activity android:name=".actividades.EmpleoHilosActivity" />
+        <activity android:name=".actividades.ASyncTaskBrowserActivity" />
+        <activity android:name=".actividades.DialogActivity" />
+        <activity android:name=".actividades.PreferenciasActivity" />
+        <activity android:name=".actividades.ProbarRecursosParametrizadosActivity" />
         <activity android:name=".actividades.ProbarServicioActivity" />
         <activity android:name=".actividades.ProbarSincronizarActivity" />
         <activity android:name=".actividades.ProbarReceptoresActivity" />

@@ -1,17 +1,14 @@
-package cursoandroid.practicasandroid;
+package cursoandroid.practicasandroid.ASyncTask;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.Scanner;
 
-/**
- * Created by Arranque 1 on 23/02/2016.
- */
+import cursoandroid.practicasandroid.ASyncTask.ASyncTaskCallBackInterface;
+
 public class ASyncTaskCallWS extends AsyncTask<String, Integer, String> {
 
     // Guardamos la variable callback para poder recupeararla

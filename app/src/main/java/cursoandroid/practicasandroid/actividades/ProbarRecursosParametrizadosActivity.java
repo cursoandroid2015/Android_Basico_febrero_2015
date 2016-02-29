@@ -1,10 +1,12 @@
-package cursoandroid.practicasandroid;
+package cursoandroid.practicasandroid.actividades;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import java.util.Arrays;
+
+import cursoandroid.practicasandroid.R;
 
 public class ProbarRecursosParametrizadosActivity extends AppCompatActivity {
 

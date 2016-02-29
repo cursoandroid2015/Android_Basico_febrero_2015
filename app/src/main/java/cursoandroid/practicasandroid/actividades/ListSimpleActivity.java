@@ -1,4 +1,4 @@
-package cursoandroid.practicasandroid;
+package cursoandroid.practicasandroid.actividades;
 
 import android.app.ListActivity;
 import android.app.SearchManager;
@@ -14,9 +14,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-/**
- * Created by Arranque 1 on 23/02/2016.
- */
 public class ListSimpleActivity extends ListActivity {
     private static final String[] LISTA_OPCIONES = {
             "Abrir sitio web",

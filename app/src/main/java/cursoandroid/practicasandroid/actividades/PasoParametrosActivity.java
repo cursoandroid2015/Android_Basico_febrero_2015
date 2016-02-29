@@ -1,4 +1,4 @@
-package cursoandroid.practicasandroid;
+package cursoandroid.practicasandroid.actividades;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,9 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-/**
- * Created by Arranque 1 on 22/02/2016.
- */
+import cursoandroid.practicasandroid.R;
+
 public class PasoParametrosActivity extends Activity {
 
     private EditText editNombre;

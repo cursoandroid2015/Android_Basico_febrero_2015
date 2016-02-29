@@ -1,17 +1,15 @@
-package cursoandroid.practicasandroid;
+package cursoandroid.practicasandroid.actividades;
 
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import cursoandroid.practicasandroid.ASyncTask.ASyncTaskCallBackInterface;
+import cursoandroid.practicasandroid.ASyncTask.ASyncTaskCallWS;
+import cursoandroid.practicasandroid.R;
 
 public class ASyncTaskBrowserActivity extends AppCompatActivity implements ASyncTaskCallBackInterface {
 

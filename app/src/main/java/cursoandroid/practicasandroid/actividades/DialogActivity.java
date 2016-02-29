@@ -1,4 +1,4 @@
-package cursoandroid.practicasandroid;
+package cursoandroid.practicasandroid.actividades;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -14,6 +14,8 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import cursoandroid.practicasandroid.R;
 
 public class DialogActivity extends AppCompatActivity implements View.OnClickListener {
 

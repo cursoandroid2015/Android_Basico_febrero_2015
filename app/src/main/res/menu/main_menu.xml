@@ -2,70 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Si queremos un grupo -->
-    <item
-        android:id="@+id/menu_main_actividades_dia1"
-        android:title="Dia 1">
+    <item android:id="@+id/menu_main_actividades_basico" android:title="Curso Básico">
         <menu>
-            <item
-                android:id="@+id/main_menu_LaunchCiclo"
-                android:title="Ciclo de Vida de Actividad"></item>
-            <item
-                android:id="@+id/main_menu_LaunchPaso"
-                android:title="Paso de Parámetros"></item>
+            <item android:id="@+id/main_menu_LaunchCiclo" android:title="Dia 1 - Ciclo de Vida de Actividad"></item>
+            <item android:id="@+id/main_menu_LaunchPaso" android:title="Dia 1 - Paso de Parámetros"></item>
+            <item android:id="@+id/main_menu_LaunchReco" android:title="Dia 2 - Lista Simple"></item>
+            <item android:id="@+id/main_menu_LanzaThreadNoHilo" android:title="Dia 2 - Uso de Thread"></item>
+            <item android:id="@+id/main_menu_LanzaHHTP" android:title="Dia 3 - Llamada HTTP"></item>
+            <item android:id="@+id/main_menu_LanzaAlert" android:title="Dia 3 - Mostrar Alertas"></item>
+            <item android:id="@+id/main_menu_LanzaPreferencias" android:title="Dia 3 - Mostrar Preferencias"></item>
+            <item android:id="@+id/main_menu_LanzaParametrizable" android:title="Dia 4 - Recursos Parametrizables"></item>
+            <item android:id="@+id/main_menu_LanzaServicio" android:title="Dia 4 - Servicio"></item>
+            <item android:id="@+id/main_menu_LanzaIntentSincroServicio" android:title="Dia 4 - Sincronizacion"></item>
+            <item android:id="@+id/main_menu_LanzaIntentProbarReceptores" android:title="Dia 5 - Probar Receptores"></item>
+            <item android:id="@+id/main_menu_LanzaIntentProbarMensajeria" android:title="Dia 5 - Probar Mensajeria RPC y Clase Messenger (MSG)"></item>
         </menu>
     </item>
-    <item
-        android:id="@+id/menu_main_actividades_dia2"
-        android:title="Dia 2">
+    <item android:id="@+id/menu_main_actividades_avanzado" android:title="Curso Avanzado">
         <menu>
-            <item
-                android:id="@+id/main_menu_LaunchReco"
-                android:title="Lista Simple"></item>
-            <item
-                android:id="@+id/main_menu_LanzaThreadNoHilo"
-                android:title="Uso de Thread"></item>
-        </menu>
-    </item>
-    <item
-        android:id="@+id/menu_main_actividades_dia3"
-        android:title="Dia 3">
-        <menu>
-            <item
-                android:id="@+id/main_menu_LanzaHHTP"
-                android:title="Llamada HTTP"></item>
-            <item
-                android:id="@+id/main_menu_LanzaAlert"
-                android:title="Mostrar Alertas"></item>
-            <item
-                android:id="@+id/main_menu_LanzaPreferencias"
-                android:title="Mostrar Preferencias"></item>
-        </menu>
-    </item>
-    <item
-        android:id="@+id/menu_main_actividades_dia4"
-        android:title="Dia 4">
-        <menu>
-            <item
-                android:id="@+id/main_menu_LanzaParametrizable"
-                android:title="Recursos Parametrizables"></item>
-            <item
-                android:id="@+id/main_menu_LanzaServicio"
-                android:title="Servicio"></item>
-            <item
-                android:id="@+id/main_menu_LanzaIntentSincroServicio"
-                android:title="Sincronizacion"></item>
-        </menu>
-    </item>
-    <item
-        android:id="@+id/menu_main_actividades_dia5"
-        android:title="Dia 5">
-        <menu>
-            <item
-                android:id="@+id/main_menu_LanzaIntentProbarReceptores"
-                android:title="Probar Receptores"></item>
-            <item
-                android:id="@+id/main_menu_LanzaIntentProbarMensajeria"
-                android:title="Probar Mensajeria"></item>
+            <item android:id="@+id/main_menu_LanzaContentProvider" android:title="Dia 1 - ContentProvider"></item>
         </menu>
     </item>
 

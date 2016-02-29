@@ -15,7 +15,14 @@ import android.widget.Toast;
 import java.util.HashSet;
 import java.util.Set;
 
+import cursoandroid.practicasandroid.actividades.ASyncTaskBrowserActivity;
+import cursoandroid.practicasandroid.actividades.CicloDeVidaActivity;
+import cursoandroid.practicasandroid.actividades.DialogActivity;
+import cursoandroid.practicasandroid.actividades.EmpleoHilosActivity;
+import cursoandroid.practicasandroid.actividades.ListSimpleActivity;
+import cursoandroid.practicasandroid.actividades.PreferenciasActivity;
 import cursoandroid.practicasandroid.actividades.ProbarReceptoresActivity;
+import cursoandroid.practicasandroid.actividades.ProbarRecursosParametrizadosActivity;
 import cursoandroid.practicasandroid.actividades.ProbarServicioActivity;
 import cursoandroid.practicasandroid.actividades.ProbarSincronizarActivity;
 import cursoandroid.practicasandroid.actividades.ServicioMensajeriaVinculadoActivity;
