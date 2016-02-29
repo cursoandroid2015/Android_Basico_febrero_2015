@@ -16,6 +16,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import cursoandroid.practicasandroid.actividades.ASyncTaskBrowserActivity;
+import cursoandroid.practicasandroid.actividades.AltaTareaActivity;
 import cursoandroid.practicasandroid.actividades.CicloDeVidaActivity;
 import cursoandroid.practicasandroid.actividades.DialogActivity;
 import cursoandroid.practicasandroid.actividades.EmpleoHilosActivity;
@@ -174,6 +175,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_menu_LanzaIntentProbarMensajeria:
                 // Llamada través de la clase
                 MessageLaunchActivity = new Intent(this, ServicioMensajeriaVinculadoActivity.class);
+                startActivity(MessageLaunchActivity);
+                break;
+            case R.id.main_menu_LanzaContentProvider:
+                // Llamada través de la clase
+                MessageLaunchActivity = new Intent(this, AltaTareaActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
             default:

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cursoandroid.practicasandroid">
+<manifest package="cursoandroid.practicasandroid"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Platform    Version	            API Level	    VERSION_CODE	        Notes
@@ -32,7 +32,7 @@
         Android     1.0 	            1 	            BASE
     -->
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -45,39 +45,39 @@
 
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".actividades.CicloDeVidaActivity" />
+        <activity android:name=".actividades.CicloDeVidaActivity"/>
         <activity android:name=".actividades.PasoParametrosActivity">
             <intent-filter>
-                <action android:name="cursoandroid.practicasandroid.PASODEPARAMETROS" />
+                <action android:name="cursoandroid.practicasandroid.PASODEPARAMETROS"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".actividades.ListSimpleActivity" />
-        <activity android:name=".actividades.EmpleoHilosActivity" />
-        <activity android:name=".actividades.ASyncTaskBrowserActivity" />
-        <activity android:name=".actividades.DialogActivity" />
-        <activity android:name=".actividades.PreferenciasActivity" />
-        <activity android:name=".actividades.ProbarRecursosParametrizadosActivity" />
-        <activity android:name=".actividades.ProbarServicioActivity" />
-        <activity android:name=".actividades.ProbarSincronizarActivity" />
-        <activity android:name=".actividades.ProbarReceptoresActivity" />
-        <activity android:name=".actividades.ServicioMensajeriaVinculadoActivity" />
+        <activity android:name=".actividades.ListSimpleActivity"/>
+        <activity android:name=".actividades.EmpleoHilosActivity"/>
+        <activity android:name=".actividades.ASyncTaskBrowserActivity"/>
+        <activity android:name=".actividades.DialogActivity"/>
+        <activity android:name=".actividades.PreferenciasActivity"/>
+        <activity android:name=".actividades.ProbarRecursosParametrizadosActivity"/>
+        <activity android:name=".actividades.ProbarServicioActivity"/>
+        <activity android:name=".actividades.ProbarSincronizarActivity"/>
+        <activity android:name=".actividades.ProbarReceptoresActivity"/>
+        <activity android:name=".actividades.ServicioMensajeriaVinculadoActivity"/>
 
         <!-- SERVICE -->
-        <service android:name=".servicios.MonitorDeviceService" />
+        <service android:name=".servicios.MonitorDeviceService"/>
         <service
             android:name=".servicios.IntentSincronizacionService"
-            android:exported="false" />
+            android:exported="false"/>
         <!-- MensajeriaServicioVinculadoRPC quitar android:enabled="false" android:exported="false" -->
-        <service android:name=".servicios.MensajeriaServicioVinculadoRPC" />
+        <service android:name=".servicios.MensajeriaServicioVinculadoRPC"/>
         <!-- MensajeriaServicioMSG quitar android:enabled="false" android:exported="false" -->
-        <service android:name=".servicios.MensajeriaServicioMSG"></service>
+        <service android:name=".servicios.MensajeriaServicioMSG"/>
         <!--
         REGISTRO AUTOMÁTICO DEL BROADCAST
         En probarreceptoresactivity.java están los bradcast receiver registrado de forma manual.
@@ -89,12 +89,13 @@
         <!-- BROADCAST RECEIVER -->
         <receiver android:name=".receptores.ProbarReceptores">
             <intent-filter>
-                <action android:name="android.intent.action.AIRPLANE_MODE" />
-                <action android:name="cursoandroid.SINCRONIZACION_TERMINADA" />
+                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+                <action android:name="cursoandroid.SINCRONIZACION_TERMINADA"/>
             </intent-filter>
         </receiver>
 
-
+        <activity android:name=".actividades.AltaTareaActivity">
+        </activity>
     </application>
 
 </manifest>
