@@ -51,7 +51,7 @@ public class TareaActivity extends ListActivity {
         stopManagingCursor(datos);
 
         // Creamos el adaptador con el contenido del cursor
-        TareaListAdapterActivity adaptador = new TareaListAdapterActivity(listaTareas);
+        TareaListAdapterActivity adaptador = new TareaListAdapterActivity(getApplicationContext(), listaTareas);
 
         // Le pasamos el arrayList para que "poble" la ListActivity
         setListAdapter(adaptador);
