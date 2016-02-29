@@ -2,7 +2,22 @@ package cursoandroid.practicasandroid.actividades;
 
 import java.util.Date;
 
+/**
+ * Created by Arranque 1 on 29/02/2016.
+ */
 public class TareaDAO {
+
+    private int codigo;
+    private String titulo;
+    private String descripcion;
+    private Date fecha;
+
+    public TareaDAO(int codigo, String titulo, String descripcion, Long fecha) {
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fecha = new Date(fecha);
+    }
 
     public int getCodigo() {
         return codigo;
@@ -35,11 +50,4 @@ public class TareaDAO {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-
-    private int codigo;
-    private String titulo;
-    private String descripcion;
-    private Date fecha;
-
-
 }
