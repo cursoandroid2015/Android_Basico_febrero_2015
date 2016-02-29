@@ -44,6 +44,7 @@ public class ServicioMensajeriaVinculadoActivity extends AppCompatActivity imple
     private MensajeriaServicioVinculadoRPCBinderInterface ServiceMensajeria;
     private boolean ServiceMensajeria_OK = true;
     // msg -> mensajero del servicio para que la actividad se conecte con el servicio para enviar mensajes a la actividad->servicio
+
     private Messenger mensajeroDelServicio;
     // rpc y msg
     // Interface de callback para que al intentar conectarnos nos devuelva el tipo ibinder
@@ -61,15 +62,18 @@ public class ServicioMensajeriaVinculadoActivity extends AppCompatActivity imple
 
                 // REGISTRAR_CLIENTE_MSG = 101
                 Message msgRegistro = Message.obtain(null, 101);
+                // Comunicación bidireccional
                 msgRegistro.replyTo = mensajeroDeLaActividad;
                 try {
-                    mensajeroDeLaActividad.send(msgRegistro);
+                    mensajeroDelServicio.send(msgRegistro);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
             }
         }
 
+        // este método sólo se llama si hay algún problema con el servicio
+        // no como confirmación de unbindservice
         @Override
         public void onServiceDisconnected(ComponentName name) {
             // preguntamos quien hace la llamada
@@ -194,11 +198,10 @@ public class ServicioMensajeriaVinculadoActivity extends AppCompatActivity imple
                             200,
                             "Enviando mensaje MSG prueba"
                     );
-                    Toast.makeText(this, "aqui llega", Toast.LENGTH_LONG).show();
+
                     // msg (messenger )es asíncronoa
                     // rpc si es bloqueante
                     try {
-                        Toast.makeText(this, "aqui llega y aqui", Toast.LENGTH_LONG).show();
                         mensajeroDelServicio.send(Mensaje);
                     } catch (RemoteException e) {
                         e.printStackTrace();
