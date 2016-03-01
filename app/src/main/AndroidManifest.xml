@@ -37,8 +37,7 @@
 
     <!-- PARA PODER INSTALAR UN PROVEEDOR DE GPS TONTO EN EL DISPOSITIVO -->
     <!-- si nos devuelve error porque debe estar en el debug no hacemos caso -->
-    <!--uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/-->
-
+    <!-- uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/ -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -50,6 +49,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -57,6 +57,7 @@
         <activity android:name=".actividades.PasoParametrosActivity">
             <intent-filter>
                 <action android:name="cursoandroid.practicasandroid.PASODEPARAMETROS"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
@@ -77,7 +78,9 @@
 
         <!-- SERVICE -->
         <service android:name=".servicios.MonitorDeviceService"/>
-        <service android:name=".servicios.IntentSincronizacionService" android:exported="false"/>
+        <service
+            android:name=".servicios.IntentSincronizacionService"
+            android:exported="false"/>
         <!-- MensajeriaServicioVinculadoRPC quitar android:enabled="false" android:exported="false" -->
         <service android:name=".servicios.MensajeriaServicioVinculadoRPC"/>
         <!-- MensajeriaServicioMSG quitar android:enabled="false" android:exported="false" -->
@@ -88,6 +91,9 @@
         No son necesarios los 2 tipos, el primero se registra al entrar en la app y el segundo se
         registra al pulsar el botón activar
         -->
+        <service
+            android:name=".servicios.FakeGPSSservice">
+        </service>
 
 
         <!-- BROADCAST RECEIVER -->
@@ -99,7 +105,11 @@
         </receiver>
 
         <!-- PROVIDERS -->
-        <provider android:name=".providers.TareasContentProvider" android:authorities="cursoandroid.practicasandroid"/>
+        <provider
+            android:name=".providers.TareasContentProvider"
+            android:authorities="cursoandroid.practicasandroid"/>
+
+
     </application>
 
 </manifest>
