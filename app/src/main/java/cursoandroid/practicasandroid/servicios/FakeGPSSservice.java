@@ -56,7 +56,7 @@ public class FakeGPSSservice extends Service implements Runnable {
                 Location pos = new Location(FAKE_GPS_PROVIDER);
                 pos.setAccuracy(4.0f); // precisión
                 pos.setAltitude(1000.0);
-                pos.setBearing();
+                pos.setBearing(2);
                 pos.setLatitude(45.0);
                 pos.setLongitude(1.0);
                 pos.setSpeed(10); // metros por segudnos
@@ -72,6 +72,7 @@ public class FakeGPSSservice extends Service implements Runnable {
         super.onDestroy();
 
         lm.removeTestProvider(FAKE_GPS_PROVIDER);
+        enviarPosicion = false;
     }
 
     @Override
