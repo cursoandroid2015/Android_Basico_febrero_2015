@@ -5,12 +5,10 @@ import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
 
 import java.util.ArrayList;
 
-public class TareaActivity extends ListActivity {
+public class TareaConsultaActivity extends ListActivity {
 
     public static final String ID_PROVIDER = "cursoandroid.practicasandroid";
 
@@ -51,7 +49,7 @@ public class TareaActivity extends ListActivity {
         stopManagingCursor(datos);
 
         // Creamos el adaptador con el contenido del cursor
-        TareaListAdapterActivity adaptador = new TareaListAdapterActivity(getApplicationContext(), listaTareas);
+        TareaListBaseAdapter adaptador = new TareaListBaseAdapter(getApplicationContext(), listaTareas);
 
         // Le pasamos el arrayList para que "poble" la ListActivity
         setListAdapter(adaptador);

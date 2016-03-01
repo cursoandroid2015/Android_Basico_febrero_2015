@@ -20,7 +20,8 @@
     </item>
     <item android:id="@+id/menu_main_actividades_avanzado" android:title="Curso Avanzado">
         <menu>
-            <item android:id="@+id/main_menu_LanzaContentProvider" android:title="Dia 1 - ContentProvider"></item>
+            <item android:id="@+id/main_menu_LanzaAltaTareasContentProvider" android:title="Dia 1 - Alta Tareas ContentProvider"></item>
+            <item android:id="@+id/main_menu_LanzaConsultarTareasaContentProvider" android:title="Dia 2 - Consultar Tareas ContentProvider"></item>
         </menu>
     </item>
 

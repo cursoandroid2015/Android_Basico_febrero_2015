@@ -40,6 +40,7 @@ public class TareasContentProvider extends ContentProvider {
         // al constructor NO_MATCH
         UriComparador = new UriMatcher(UriMatcher.NO_MATCH);
 
+        // siempre hay que abrir
         db.AbrirDB();
 
         // Sabremos lo que quiere hacer al llamar al QUERY INSERT DELETE UPDATE de esta clase

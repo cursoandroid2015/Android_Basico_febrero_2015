@@ -11,13 +11,13 @@ import java.util.ArrayList;
 
 import cursoandroid.practicasandroid.R;
 
-public class TareaListAdapterActivity extends BaseAdapter {
+public class TareaListBaseAdapter extends BaseAdapter {
 
     private Context ctx;
     private ArrayList<TareaDAO> listaTareas;
     private LayoutInflater inflater;
 
-    public TareaListAdapterActivity(Context ctx, ArrayList<TareaDAO> listaTareas) {
+    public TareaListBaseAdapter(Context ctx, ArrayList<TareaDAO> listaTareas) {
         this.ctx = ctx;
         this.listaTareas = listaTareas;
         this.inflater = LayoutInflater.from(ctx);
@@ -41,22 +41,23 @@ public class TareaListAdapterActivity extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        View layout = convertView;
+
         // Como este método reutilza las View para cada elemento i, hay que preguntar si ya existe
         // Además el elemento i-ésimo está en un recurso a través de un layout
-        if (convertView == null) {
+        if (layout == null) {
             // no hace falta poner el Viewgroup, ponemos null
-            View layout = inflater.inflate(R.layout.tareas_item, null);
-            TareaDAO tarea = listaTareas.get(position);
-
-            PonerTexto(layout, R.id.edit_tarea_id, String.valueOf(tarea.getCodigo()));
-            PonerTexto(layout, R.id.edit_tarea_titulo, String.valueOf(tarea.getTitulo()));
-            PonerTexto(layout, R.id.edit_tarea_descripcion, String.valueOf(tarea.getDescripcion()));
-            PonerTexto(layout, R.id.edit_tarea_fecha, tarea.getFecha().toString());
-
-            return layout;
-        } else {
-            return convertView;
+            layout = inflater.inflate(R.layout.tareas_item, null);
         }
+
+        TareaDAO tarea = listaTareas.get(position);
+
+        PonerTexto(layout, R.id.edit_tarea_id, String.valueOf(tarea.getCodigo()));
+        PonerTexto(layout, R.id.edit_tarea_titulo, String.valueOf(tarea.getTitulo()));
+        PonerTexto(layout, R.id.edit_tarea_descripcion, String.valueOf(tarea.getDescripcion()));
+        PonerTexto(layout, R.id.edit_tarea_fecha, tarea.getFecha().toString());
+
+        return layout;
     }
 
     private void PonerTexto(View layout, int codigo, String texto) {

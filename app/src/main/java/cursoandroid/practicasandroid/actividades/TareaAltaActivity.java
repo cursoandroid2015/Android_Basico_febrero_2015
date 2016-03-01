@@ -9,7 +9,7 @@ import android.widget.EditText;
 import cursoandroid.practicasandroid.R;
 import cursoandroid.practicasandroid.providers.TareasDB;
 
-public class AltaTareaActivity extends AppCompatActivity {
+public class TareaAltaActivity extends AppCompatActivity {
 
     private EditText alta_tarea_titulo;
     private EditText alta_tarea_descripcion;

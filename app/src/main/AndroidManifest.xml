@@ -45,6 +45,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -52,6 +53,7 @@
         <activity android:name=".actividades.PasoParametrosActivity">
             <intent-filter>
                 <action android:name="cursoandroid.practicasandroid.PASODEPARAMETROS"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
@@ -65,10 +67,14 @@
         <activity android:name=".actividades.ProbarSincronizarActivity"/>
         <activity android:name=".actividades.ProbarReceptoresActivity"/>
         <activity android:name=".actividades.ServicioMensajeriaVinculadoActivity"/>
+        <activity android:name=".actividades.TareaAltaActivity"/>
+        <activity android:name=".actividades.TareaConsultaActivity"/>
 
         <!-- SERVICE -->
         <service android:name=".servicios.MonitorDeviceService"/>
-        <service android:name=".servicios.IntentSincronizacionService" android:exported="false"/>
+        <service
+            android:name=".servicios.IntentSincronizacionService"
+            android:exported="false"/>
         <!-- MensajeriaServicioVinculadoRPC quitar android:enabled="false" android:exported="false" -->
         <service android:name=".servicios.MensajeriaServicioVinculadoRPC"/>
         <!-- MensajeriaServicioMSG quitar android:enabled="false" android:exported="false" -->
@@ -89,11 +95,13 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".actividades.AltaTareaActivity"></activity>
-
         <!-- PROVIDERS -->
-        <provider android:authorities="cursoandroid.practicasandroid" android:name=".providers.TareasContentProvider"></provider>
+        <provider
+            android:name=".providers.TareasContentProvider"
+            android:authorities="cursoandroid.practicasandroid"/>
 
+        <activity android:name=".actividades.DataBindingActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -16,7 +16,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import cursoandroid.practicasandroid.actividades.ASyncTaskBrowserActivity;
-import cursoandroid.practicasandroid.actividades.AltaTareaActivity;
+import cursoandroid.practicasandroid.actividades.TareaAltaActivity;
 import cursoandroid.practicasandroid.actividades.CicloDeVidaActivity;
 import cursoandroid.practicasandroid.actividades.DialogActivity;
 import cursoandroid.practicasandroid.actividades.EmpleoHilosActivity;
@@ -27,6 +27,7 @@ import cursoandroid.practicasandroid.actividades.ProbarRecursosParametrizadosAct
 import cursoandroid.practicasandroid.actividades.ProbarServicioActivity;
 import cursoandroid.practicasandroid.actividades.ProbarSincronizarActivity;
 import cursoandroid.practicasandroid.actividades.ServicioMensajeriaVinculadoActivity;
+import cursoandroid.practicasandroid.actividades.TareaConsultaActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -177,9 +178,14 @@ public class MainActivity extends AppCompatActivity {
                 MessageLaunchActivity = new Intent(this, ServicioMensajeriaVinculadoActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
-            case R.id.main_menu_LanzaContentProvider:
+            case R.id.main_menu_LanzaAltaTareasContentProvider:
                 // Llamada través de la clase
-                MessageLaunchActivity = new Intent(this, AltaTareaActivity.class);
+                MessageLaunchActivity = new Intent(this, TareaAltaActivity.class);
+                startActivity(MessageLaunchActivity);
+                break;
+            case R.id.main_menu_LanzaConsultarTareasaContentProvider:
+                // Llamada través de la clase
+                MessageLaunchActivity = new Intent(this, TareaConsultaActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
             default:
