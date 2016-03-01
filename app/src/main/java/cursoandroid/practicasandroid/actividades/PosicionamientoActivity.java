@@ -6,8 +6,8 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.location.LocationProvider;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,11 +23,14 @@ import cursoandroid.practicasandroid.R;
 
 public class PosicionamientoActivity extends AppCompatActivity implements LocationListener {
 
+    public static final int DIALOG_PERMISSION_REQUEST_CODE = 100;
     private Button btn_loc_activar;
     private Button btn_loc_desactivar;
     private TextView txt_loc_detalle;
     private Spinner spin_loc_list;
     private LocationManager lm;
+
+    private boolean permisoPosicionamiento = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,40 +81,81 @@ public class PosicionamientoActivity extends AppCompatActivity implements Locati
     }
 
     private void btn_loc_desactivar_action() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
+        try {
+            String nombreProveedor = (String) spin_loc_list.getSelectedItem();
+
+            int permission = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+            if (permission != PackageManager.PERMISSION_GRANTED) {
+
+                permisoPosicionamiento = false;
+
+                // Le pregunto al usuario que necesito el permiso poque está desactivado
+                ActivityCompat.requestPermissions(
+                        this,
+                        new String[]{
+                                Manifest.permission.ACCESS_FINE_LOCATION
+                        },
+                        DIALOG_PERMISSION_REQUEST_CODE
+                );
+
+            } else {
+                lm.removeUpdates(this);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        lm.removeUpdates(this);
     }
 
     private void btn_loc_activar_action() {
-        String nombreProveedor = (String) spin_loc_list.getSelectedItem();
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
+        try {
+            String nombreProveedor = (String) spin_loc_list.getSelectedItem();
+
+            int permission = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+            if (permission != PackageManager.PERMISSION_GRANTED) {
+
+                permisoPosicionamiento = false;
+
+                // Le pregunto al usuario que necesito el permiso poque está desactivado
+                ActivityCompat.requestPermissions(
+                        this,
+                        new String[]{
+                                Manifest.permission.ACCESS_FINE_LOCATION
+                        },
+                        DIALOG_PERMISSION_REQUEST_CODE
+                );
+
+            } else {
+                lm.requestLocationUpdates(
+                        nombreProveedor,
+                        2000, // cada cuanto tiempo milisegundos
+                        10, // precisión mínima metros
+                        this
+                );
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        lm.requestLocationUpdates(
-                nombreProveedor,
-                2000, // cada cuanto tiempo milisegundos
-                10, // precisión mínima metros
-                this
-        );
+    }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
+        if (requestCode == DIALOG_PERMISSION_REQUEST_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                String nombreProveedor = (String) spin_loc_list.getSelectedItem();
+                permisoPosicionamiento = true;
+                lm.requestLocationUpdates(
+                        nombreProveedor,
+                        2000, // cada cuanto tiempo milisegundos
+                        10, // precisión mínima metros
+                        this
+                );
+            }
+        }
     }
 
     @Override
