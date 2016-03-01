@@ -1,21 +1,16 @@
 package cursoandroid.practicasandroid;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import cursoandroid.practicasandroid.actividades.ASyncTaskBrowserActivity;
+import cursoandroid.practicasandroid.actividades.PosicionamientoActivity;
+import cursoandroid.practicasandroid.actividades.ProbarPreferencias;
 import cursoandroid.practicasandroid.actividades.TareaAltaActivity;
 import cursoandroid.practicasandroid.actividades.CicloDeVidaActivity;
 import cursoandroid.practicasandroid.actividades.DialogActivity;
@@ -32,70 +27,15 @@ import cursoandroid.practicasandroid.actividades.TareaConsultaActivity;
 public class MainActivity extends AppCompatActivity {
 
     private Integer ACTIVIDAD_PASO_DE_PARAMETROS = 1000;
-    private Button btn_preferencias_reset;
-    private Button btn_preferencias_read;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn_preferencias_reset = (Button) findViewById(R.id.btn_preferencias_reset);
-        btn_preferencias_read = (Button) findViewById(R.id.btn_preferencias_read);
 
-        btn_preferencias_reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                btn_preferencias_reset_action(v);
-            }
-        });
-
-        btn_preferencias_read.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                btn_preferencias_read_action(v);
-            }
-        });
     }
-
-    private void btn_preferencias_read_action(View v) {
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-
-        String nombre = pref.getString("nombre", "defaultnombre");
-        String password = pref.getString("password", "defaultpassword");
-
-        boolean depuracion = pref.getBoolean("depuracion", false);
-        boolean auditoria = pref.getBoolean("auditoria", false);
-
-        String tipoConexion = pref.getString("tipoConexion", "tipoConexionNone");
-
-        Set<String> conexionesActivas = pref.getStringSet("ConexionesActivas", new HashSet<String>() {
-        });
-
-        Toast.makeText(this, String.format("Nombre: %s\nPassword: %s\nDepuracion: %s\nAuditoria: %s\nTipoConexion: %s\nConexionesActivas: %s",
-                nombre,
-                password,
-                depuracion,
-                auditoria,
-                tipoConexion,
-                conexionesActivas.toString()
-        ), Toast.LENGTH_LONG).show();
-    }
-
-    private void btn_preferencias_reset_action(View v) {
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putString("nombre", "1111");
-        editor.putBoolean("depuracion", true);
-
-        HashSet<String> valores = new HashSet<>();
-        valores.add("x1");
-        valores.add("x2");
-        editor.putStringSet("ConexionesActivas", valores);
-
-        editor.commit();
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -148,6 +88,11 @@ public class MainActivity extends AppCompatActivity {
                 MessageLaunchActivity = new Intent(this, DialogActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
+            case R.id.main_menu_LanzaModifPreferencias:
+                // Llamada través de la clase
+                MessageLaunchActivity = new Intent(this, ProbarPreferencias.class);
+                startActivity(MessageLaunchActivity);
+                break;
             case R.id.main_menu_LanzaPreferencias:
                 // Llamada través de la clase
                 MessageLaunchActivity = new Intent(this, PreferenciasActivity.class);
@@ -186,6 +131,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_menu_LanzaConsultarTareasaContentProvider:
                 // Llamada través de la clase
                 MessageLaunchActivity = new Intent(this, TareaConsultaActivity.class);
+                startActivity(MessageLaunchActivity);
+                break;
+            case R.id.main_menu_LanzaPosicionamiento:
+                // Llamada través de la clase
+                MessageLaunchActivity = new Intent(this, PosicionamientoActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
             default:

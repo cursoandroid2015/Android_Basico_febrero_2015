@@ -9,19 +9,5 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cursoandroid.practicasandroid.MainActivity">
 
-    <Button
-        android:id="@+id/btn_preferencias_reset"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Reset" />
 
-    <Button
-        android:id="@+id/btn_preferencias_read"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_preferencias_reset"
-        android:layout_centerHorizontal="true"
-        android:text="READ" />
 </RelativeLayout>

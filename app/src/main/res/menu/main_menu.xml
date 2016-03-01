@@ -10,6 +10,7 @@
             <item android:id="@+id/main_menu_LanzaThreadNoHilo" android:title="Dia 2 - Uso de Thread"></item>
             <item android:id="@+id/main_menu_LanzaHHTP" android:title="Dia 3 - Llamada HTTP"></item>
             <item android:id="@+id/main_menu_LanzaAlert" android:title="Dia 3 - Mostrar Alertas"></item>
+            <item android:id="@+id/main_menu_LanzaModifPreferencias" android:title="Dia 3 - Modificar Preferencias"></item>
             <item android:id="@+id/main_menu_LanzaPreferencias" android:title="Dia 3 - Mostrar Preferencias"></item>
             <item android:id="@+id/main_menu_LanzaParametrizable" android:title="Dia 4 - Recursos Parametrizables"></item>
             <item android:id="@+id/main_menu_LanzaServicio" android:title="Dia 4 - Servicio"></item>
@@ -19,10 +20,11 @@
         </menu>
     </item>
     <item android:id="@+id/menu_main_actividades_avanzado" android:title="Curso Avanzado">
-        <menu>
-            <item android:id="@+id/main_menu_LanzaAltaTareasContentProvider" android:title="Dia 1 - Alta Tareas ContentProvider"></item>
-            <item android:id="@+id/main_menu_LanzaConsultarTareasaContentProvider" android:title="Dia 2 - Consultar Tareas ContentProvider"></item>
-        </menu>
+    <menu>
+        <item android:id="@+id/main_menu_LanzaAltaTareasContentProvider" android:title="Dia 1 - Alta Tareas ContentProvider"></item>
+        <item android:id="@+id/main_menu_LanzaConsultarTareasaContentProvider" android:title="Dia 2 - Consultar Tareas ContentProvider"></item>
+        <item android:id="@+id/main_menu_LanzaPosicionamiento" android:title="Dia 2 - Posicionamiento"></item>
+    </menu>
     </item>
 
 </menu>

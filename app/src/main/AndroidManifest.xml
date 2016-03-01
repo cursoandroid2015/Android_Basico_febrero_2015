@@ -33,6 +33,12 @@
     -->
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!-- PARA PODER INSTALAR UN PROVEEDOR DE GPS TONTO EN EL DISPOSITIVO -->
+    <!-- si nos devuelve error porque debe estar en el debug no hacemos caso -->
+    <!--uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/-->
 
     <application
         android:allowBackup="true"
@@ -45,7 +51,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -53,7 +58,6 @@
         <activity android:name=".actividades.PasoParametrosActivity">
             <intent-filter>
                 <action android:name="cursoandroid.practicasandroid.PASODEPARAMETROS"/>
-
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
@@ -61,6 +65,7 @@
         <activity android:name=".actividades.EmpleoHilosActivity"/>
         <activity android:name=".actividades.ASyncTaskBrowserActivity"/>
         <activity android:name=".actividades.DialogActivity"/>
+        <activity android:name=".actividades.ProbarPreferencias"/>
         <activity android:name=".actividades.PreferenciasActivity"/>
         <activity android:name=".actividades.ProbarRecursosParametrizadosActivity"/>
         <activity android:name=".actividades.ProbarServicioActivity"/>
@@ -69,12 +74,11 @@
         <activity android:name=".actividades.ServicioMensajeriaVinculadoActivity"/>
         <activity android:name=".actividades.TareaAltaActivity"/>
         <activity android:name=".actividades.TareaConsultaActivity"/>
+        <activity android:name=".actividades.PosicionamientoActivity"/>
 
         <!-- SERVICE -->
         <service android:name=".servicios.MonitorDeviceService"/>
-        <service
-            android:name=".servicios.IntentSincronizacionService"
-            android:exported="false"/>
+        <service android:name=".servicios.IntentSincronizacionService" android:exported="false"/>
         <!-- MensajeriaServicioVinculadoRPC quitar android:enabled="false" android:exported="false" -->
         <service android:name=".servicios.MensajeriaServicioVinculadoRPC"/>
         <!-- MensajeriaServicioMSG quitar android:enabled="false" android:exported="false" -->
@@ -96,12 +100,7 @@
         </receiver>
 
         <!-- PROVIDERS -->
-        <provider
-            android:name=".providers.TareasContentProvider"
-            android:authorities="cursoandroid.practicasandroid"/>
-
-        <activity android:name=".actividades.DataBindingActivity">
-        </activity>
+        <provider android:name=".providers.TareasContentProvider" android:authorities="cursoandroid.practicasandroid"/>
     </application>
 
 </manifest>
