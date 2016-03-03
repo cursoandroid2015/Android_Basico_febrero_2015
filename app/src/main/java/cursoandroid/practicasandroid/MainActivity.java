@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 MessageLaunchActivity = new Intent(this, FragmentosActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
-            case R.id.main_menu_LanzaFullScreen:
+            case R.id.main_menu_LanzaFullScreenWebView:
                 // Llamada través de la clase
                 MessageLaunchActivity = new Intent(this, ContenidoWebActivity.class);
                 startActivity(MessageLaunchActivity);

@@ -28,7 +28,7 @@
         <item android:id="@+id/main_menu_LanzaTelefonia" android:title="Dia 3 - Telefonia"></item>
         <item android:id="@+id/main_menu_LanzaConectividad" android:title="Dia 3 - Conectividad"></item>
         <item android:id="@+id/main_menu_LanzaFragmentos" android:title="Dia 4 - Fragmentos"></item>
-        <item android:id="@+id/main_menu_LanzaFullScreen" android:title="Dia 4 - Full Screen"></item>
+        <item android:id="@+id/main_menu_LanzaFullScreenWebView" android:title="Dia 4 - Full Screen"></item>
 
     </menu>
 
