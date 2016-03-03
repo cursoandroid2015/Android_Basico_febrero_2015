@@ -22,7 +22,15 @@ public class FragmentosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Caso 1
         setContentView(R.layout.activity_fragmentos);
+
+        // Caso 2
+        // Para probar el Layout con fragmentos estáticos
+        //setContentView(R.layout.activity_fragmentos_estaticos);
+        // Si activamos esto no estaría enlazado el la lista de sensores con los datos de sensores, para tenerlos
+        // enlazados hay que hacerlo como está ahora, que es dinámico
 
         fm = getFragmentManager();
     }
@@ -40,18 +48,22 @@ public class FragmentosActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
 
-            case R.id.mnu_fragmentos_modo_stack:
-                modoStack = !modoStack;
-                break;
-
             case R.id.mnu_fragmentos_lista_mostrar:
                 listaFlag = new ListaSensoresFragment() ;
                 ft.add(R.id.frame_fragmentos_lista, listaFlag);
                 break;
 
             case R.id.mnu_fragmentos_datos_mostrar:
+                // Creo el fragmento
                 datosFlag = new SensoresFragment();
+                // Lo incorporo a la vista
                 ft.add(R.id.frame_fragmentos_datos, datosFlag);
+
+                // Nuestro interfaz de callback
+                if (listaFlag != null) {
+                    listaFlag.setReceptor(datosFlag);
+                }
+
                 break;
 
             case R.id.mnu_fragmentos_lista_quitar:
@@ -60,8 +72,14 @@ public class FragmentosActivity extends AppCompatActivity {
                 break;
 
             case R.id.mnu_fragmentos_datos_quitar:
+                if (listaFlag != null) {
+                    listaFlag.setReceptor(null);
+                }
                 ft.remove(datosFlag);
                 datosFlag = null;
+                break;
+            case R.id.mnu_fragmentos_modo_stack:
+                modoStack = !modoStack;
                 break;
 
         }
@@ -77,7 +95,6 @@ public class FragmentosActivity extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-
 
         MenuItem mnu_lista_mostrar = menu.findItem(R.id.mnu_fragmentos_lista_mostrar);
         MenuItem mnu_lista_quitar = menu.findItem(R.id.mnu_fragmentos_lista_quitar);

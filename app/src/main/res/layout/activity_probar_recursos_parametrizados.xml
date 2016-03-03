@@ -10,7 +10,7 @@
     tools:context=".actividades.ProbarRecursosParametrizadosActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txt_datossensor_estado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/txt_datossensor_estado"
         android:layout_marginStart="71dp"
         android:layout_marginTop="58dp"
         android:text="@string/clave"

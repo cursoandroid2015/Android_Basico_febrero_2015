@@ -10,7 +10,7 @@ import android.os.IBinder;
 
 import java.util.Date;
 
-public class FakeGPSSservice extends Service implements Runnable {
+public class FakeGPSService extends Service implements Runnable {
 
     public static final String FAKE_GPS_PROVIDER = "FAKE_GPS";
     private LocationManager lm;

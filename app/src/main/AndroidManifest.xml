@@ -79,6 +79,12 @@
         <activity android:name=".actividades.TareaAltaActivity"/>
         <activity android:name=".actividades.TareaConsultaActivity"/>
         <activity android:name=".actividades.PosicionamientoActivity"/>
+        <activity android:name=".actividades.FakeGPSActivity"/>
+        <activity android:name=".actividades.TelefoniaActivity"/>
+        <activity android:name=".actividades.ConectividadActivity"/>
+        <activity
+            android:name=".actividades.FragmentosActivity"
+            android:screenOrientation="landscape"/>
 
         <!-- SERVICE -->
         <service android:name=".servicios.MonitorDeviceService"/>
@@ -95,8 +101,7 @@
         No son necesarios los 2 tipos, el primero se registra al entrar en la app y el segundo se
         registra al pulsar el botón activar
         -->
-        <service android:name=".servicios.FakeGPSSservice">
-        </service>
+        <service android:name=".servicios.FakeGPSService"/>
 
         <!-- BROADCAST RECEIVER -->
         <receiver android:name=".receptores.ProbarReceptores">
@@ -111,13 +116,8 @@
             android:name=".providers.TareasContentProvider"
             android:authorities="cursoandroid.practicasandroid"/>
 
-        <activity android:name=".actividades.TelefoniaActivity">
+        <activity android:name=".actividades.FakeGPSActivity">
         </activity>
-        <activity android:name=".actividades.ConectividadActivity">
-        </activity>
-        <activity android:name=".actividades.FragmentosActivity"
-                  android:screenOrientation="landscape"
-            />
     </application>
 
 </manifest>

@@ -4,14 +4,18 @@ package cursoandroid.practicasandroid.fragments;
         import android.app.Fragment;
         import android.content.Context;
         import android.hardware.Sensor;
+        import android.hardware.SensorEventListener;
+        import android.hardware.SensorListener;
         import android.hardware.SensorManager;
         import android.net.Uri;
+        import android.nfc.NfcAdapter;
         import android.os.Bundle;
 
         import android.text.Html;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.widget.AdapterView;
         import android.widget.ArrayAdapter;
         import android.widget.ListView;
         import android.widget.Toast;
@@ -27,11 +31,26 @@ public class ListaSensoresFragment extends Fragment {
     private Context context;
 
     private ArrayList<String> listaCadenas = new ArrayList<String>();
+    private SensorEventListener receptor;
 
-    public ListaSensoresFragment() {
+    private List<Sensor> listaSensores;
+
+    public ListaSensoresFragment(){
 
     }
 
+    public ListaSensoresFragment(SensorEventListener receptor) {
+
+        this.receptor = receptor;
+    }
+
+    public SensorEventListener getReceptor() {
+        return receptor;
+    }
+
+    public void setReceptor(SensorEventListener receptor) {
+        this.receptor = receptor;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,7 +63,7 @@ public class ListaSensoresFragment extends Fragment {
             Toast.makeText(context, "Hay acelerómetro", Toast.LENGTH_LONG).show();
         }
 
-        List<Sensor> listaSensores = sm.getSensorList(Sensor.TYPE_ALL);
+        listaSensores = sm.getSensorList(Sensor.TYPE_ALL);
 
         for(Sensor s : listaSensores) {
 
@@ -79,6 +98,18 @@ public class ListaSensoresFragment extends Fragment {
         lista.setAdapter(new ArrayAdapter<String>(context,
                 android.R.layout.simple_list_item_1, listaCadenas));
 
+        lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                if (receptor != null) {
+                    // Periodo de sampleo DELAY_NORMAL
+                    sm.registerListener(receptor, listaSensores.get(position),  SensorManager.SENSOR_DELAY_NORMAL);
+                }
+                return false;
+            }
+        });
+
+
         return layout;
     }
 
@@ -91,6 +122,15 @@ public class ListaSensoresFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        if(receptor != null) {
+            sm.unregisterListener(receptor);
+        }
     }
 
 }
