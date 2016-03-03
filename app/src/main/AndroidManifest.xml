@@ -32,6 +32,9 @@
         Android     1.0 	            1 	            BASE
     -->
 
+    <!-- ALGUNOS PERMISOS A PARTE DE TENER QUE PONELO AQUÍ HAY QUE ACTIVARLO EN LA APP DIRECTAMENTE,
+    ESTO A PARTIR DE LA VERSIÓN 6 DE ANDROID -->
+
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
@@ -117,6 +120,12 @@
             android:authorities="cursoandroid.practicasandroid"/>
 
         <activity android:name=".actividades.FakeGPSActivity">
+        </activity>
+        <activity
+            android:name=".actividades.ContenidoWebActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_contenido_web"
+            android:theme="@style/FullscreenTheme">
         </activity>
     </application>
 

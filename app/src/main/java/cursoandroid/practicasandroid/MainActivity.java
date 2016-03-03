@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import cursoandroid.practicasandroid.actividades.ASyncTaskBrowserActivity;
 import cursoandroid.practicasandroid.actividades.ConectividadActivity;
+import cursoandroid.practicasandroid.actividades.ContenidoWebActivity;
 import cursoandroid.practicasandroid.actividades.FakeGPSActivity;
 import cursoandroid.practicasandroid.actividades.FragmentosActivity;
 import cursoandroid.practicasandroid.actividades.PosicionamientoActivity;
@@ -142,6 +143,11 @@ public class MainActivity extends AppCompatActivity {
                 MessageLaunchActivity = new Intent(this, PosicionamientoActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
+            case R.id.main_menu_LanzaFakeGPS:
+                // Llamada través de la clase
+                MessageLaunchActivity = new Intent(this, FakeGPSActivity.class);
+                startActivity(MessageLaunchActivity);
+                break;
             case R.id.main_menu_LanzaTelefonia:
                 // Llamada través de la clase
                 MessageLaunchActivity = new Intent(this, TelefoniaActivity.class);
@@ -157,11 +163,12 @@ public class MainActivity extends AppCompatActivity {
                 MessageLaunchActivity = new Intent(this, FragmentosActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
-            case R.id.main_menu_LanzaFakeGPS:
+            case R.id.main_menu_LanzaFullScreen:
                 // Llamada través de la clase
-                MessageLaunchActivity = new Intent(this, FakeGPSActivity.class);
+                MessageLaunchActivity = new Intent(this, ContenidoWebActivity.class);
                 startActivity(MessageLaunchActivity);
-                break;            default:
+                break;
+            default:
                 break;
         }
         return super.onOptionsItemSelected(item);
