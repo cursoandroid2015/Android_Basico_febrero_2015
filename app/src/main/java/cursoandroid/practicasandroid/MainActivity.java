@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import cursoandroid.practicasandroid.actividades.ASyncTaskBrowserActivity;
+import cursoandroid.practicasandroid.actividades.ConectividadActivity;
+import cursoandroid.practicasandroid.actividades.FragmentosActivity;
 import cursoandroid.practicasandroid.actividades.PosicionamientoActivity;
 import cursoandroid.practicasandroid.actividades.ProbarPreferencias;
 import cursoandroid.practicasandroid.actividades.TareaAltaActivity;
@@ -23,6 +25,7 @@ import cursoandroid.practicasandroid.actividades.ProbarServicioActivity;
 import cursoandroid.practicasandroid.actividades.ProbarSincronizarActivity;
 import cursoandroid.practicasandroid.actividades.ServicioMensajeriaVinculadoActivity;
 import cursoandroid.practicasandroid.actividades.TareaConsultaActivity;
+import cursoandroid.practicasandroid.actividades.TelefoniaActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -136,6 +139,21 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_menu_LanzaPosicionamiento:
                 // Llamada través de la clase
                 MessageLaunchActivity = new Intent(this, PosicionamientoActivity.class);
+                startActivity(MessageLaunchActivity);
+                break;
+            case R.id.main_menu_LanzaTelefonia:
+                // Llamada través de la clase
+                MessageLaunchActivity = new Intent(this, TelefoniaActivity.class);
+                startActivity(MessageLaunchActivity);
+                break;
+            case R.id.main_menu_LanzaConectividad:
+                // Llamada través de la clase
+                MessageLaunchActivity = new Intent(this, ConectividadActivity.class);
+                startActivity(MessageLaunchActivity);
+                break;
+            case R.id.main_menu_LanzaFragmentos:
+                // Llamada través de la clase
+                MessageLaunchActivity = new Intent(this, FragmentosActivity.class);
                 startActivity(MessageLaunchActivity);
                 break;
             default:

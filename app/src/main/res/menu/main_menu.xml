@@ -24,7 +24,12 @@
         <item android:id="@+id/main_menu_LanzaAltaTareasContentProvider" android:title="Dia 1 - Alta Tareas ContentProvider"></item>
         <item android:id="@+id/main_menu_LanzaConsultarTareasaContentProvider" android:title="Dia 2 - Consultar Tareas ContentProvider"></item>
         <item android:id="@+id/main_menu_LanzaPosicionamiento" android:title="Dia 2 - Posicionamiento"></item>
+        <item android:id="@+id/main_menu_LanzaTelefonia" android:title="Dia 3 - Telefonia"></item>
+        <item android:id="@+id/main_menu_LanzaConectividad" android:title="Dia 3 - Conectividad"></item>
+        <item android:id="@+id/main_menu_LanzaFragmentos" android:title="Dia 4 - Fragmentos"></item>
+
     </menu>
+
     </item>
 
 </menu>

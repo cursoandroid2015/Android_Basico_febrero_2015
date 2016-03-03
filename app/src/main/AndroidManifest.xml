@@ -34,6 +34,10 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <!-- hay que ir a SETTINGS->APPS->APLICACIONES x->PERMISSION->DAR EL PERMISO DEL TELEFONO, a pesar de establecerlo en manifest -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <!-- PARA PODER INSTALAR UN PROVEEDOR DE GPS TONTO EN EL DISPOSITIVO -->
     <!-- si nos devuelve error porque debe estar en el debug no hacemos caso -->
@@ -91,10 +95,8 @@
         No son necesarios los 2 tipos, el primero se registra al entrar en la app y el segundo se
         registra al pulsar el botón activar
         -->
-        <service
-            android:name=".servicios.FakeGPSSservice">
+        <service android:name=".servicios.FakeGPSSservice">
         </service>
-
 
         <!-- BROADCAST RECEIVER -->
         <receiver android:name=".receptores.ProbarReceptores">
@@ -109,7 +111,13 @@
             android:name=".providers.TareasContentProvider"
             android:authorities="cursoandroid.practicasandroid"/>
 
-
+        <activity android:name=".actividades.TelefoniaActivity">
+        </activity>
+        <activity android:name=".actividades.ConectividadActivity">
+        </activity>
+        <activity android:name=".actividades.FragmentosActivity"
+                  android:screenOrientation="landscape"
+            />
     </application>
 
 </manifest>

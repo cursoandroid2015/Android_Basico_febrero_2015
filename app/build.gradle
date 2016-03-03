@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.android.databinding'
 
 android {
     compileSdkVersion 23
@@ -10,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "cursoandroid.practicasandroid"
-        minSdkVersion 19
+        minSdkVersion 23
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"

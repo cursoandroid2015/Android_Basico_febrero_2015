@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/mnu_fragmentos_lista_mostrar"         android:title="Mostrar lista" />
+    <item android:id="@+id/mnu_fragmentos_lista_quitar"          android:title="Quitar lista" />
+    <item android:id="@+id/mnu_fragmentos_datos_mostrar"         android:title="Mostrar datos" />
+    <item android:id="@+id/mnu_fragmentos_datos_quitar"          android:title="Quitar datos" />
+    <item android:id="@+id/mnu_fragmentos_modo_stack"            android:checkable="true" android:title="Modo stack" />
+
+</menu>
