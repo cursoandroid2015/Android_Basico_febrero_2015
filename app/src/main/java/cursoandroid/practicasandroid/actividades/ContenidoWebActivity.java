@@ -40,6 +40,8 @@ public class ContenidoWebActivity extends Activity {
         webPanelSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         webPanelSettings.setDisplayZoomControls(false);
 
+        // Ejemplo sin utilizar una clase anónimca new Object
+        // http://stackoverflow.com/questions/21749425/android-webview-addjavascriptinterface-does-not-work-if-the-webview-is-created-i
         // aunque sale error, no le hacemos caso, es del editor
         webPanel.addJavascriptInterface(
                 new Object() {
