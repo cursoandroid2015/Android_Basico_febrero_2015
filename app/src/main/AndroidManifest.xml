@@ -32,8 +32,11 @@
         Android     1.0 	            1 	            BASE
     -->
 
-    <!-- ALGUNOS PERMISOS A PARTE DE TENER QUE PONELO AQUÍ HAY QUE ACTIVARLO EN LA APP DIRECTAMENTE,
-    ESTO A PARTIR DE LA VERSIÓN 6 DE ANDROID -->
+
+    <!--
+    ALGUNOS PERMISOS A PARTE DE TENER QUE PONELO AQUÍ HAY QUE ACTIVARLO EN LA APP DIRECTAMENTE,
+    ESTO A PARTIR DE LA VERSIÓN 6 DE ANDROID
+    -->
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -56,6 +59,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -63,6 +67,7 @@
         <activity android:name=".actividades.PasoParametrosActivity">
             <intent-filter>
                 <action android:name="cursoandroid.practicasandroid.PASODEPARAMETROS"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
@@ -83,12 +88,20 @@
         <activity android:name=".actividades.FakeGPSActivity"/>
         <activity android:name=".actividades.TelefoniaActivity"/>
         <activity android:name=".actividades.ConectividadActivity"/>
-        <activity android:name=".actividades.FragmentosActivity" android:screenOrientation="landscape"/>
-        <activity  android:name=".actividades.ContenidoWebActivity"  android:configChanges="orientation|keyboardHidden|screenSize" android:label="@string/title_activity_contenido_web" android:theme="@style/FullscreenTheme"/>
+        <activity
+            android:name=".actividades.FragmentosActivity"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".actividades.ContenidoWebActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_contenido_web"
+            android:theme="@style/FullscreenTheme"/>
 
         <!-- SERVICE -->
         <service android:name=".servicios.MonitorDeviceService"/>
-        <service android:name=".servicios.IntentSincronizacionService" android:exported="false"/>
+        <service
+            android:name=".servicios.IntentSincronizacionService"
+            android:exported="false"/>
         <!-- MensajeriaServicioVinculadoRPC quitar android:enabled="false" android:exported="false" -->
         <service android:name=".servicios.MensajeriaServicioVinculadoRPC"/>
         <!-- MensajeriaServicioMSG quitar android:enabled="false" android:exported="false" -->
@@ -110,7 +123,12 @@
         </receiver>
 
         <!-- PROVIDERS -->
-        <provider android:name=".providers.TareasContentProvider" android:authorities="cursoandroid.practicasandroid"/>
+        <provider
+            android:name=".providers.TareasContentProvider"
+            android:authorities="cursoandroid.practicasandroid"/>
+
+        <activity android:name=".actividades.ServicioAlarmasActivity">
+        </activity>
     </application>
 
 </manifest>
